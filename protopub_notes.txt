@@ -1,0 +1,63 @@
+Protopub (protocol buffers)
+---------------------------
+---------------------------
+
+This is different way of pojo
+We can serialize or deserialize using class which is created by proto compiler
+We can use for client server communication. Instead of json we can use this.
+
+
+
+We can define required params/object/schema in any filename.proto
+Then we can create class from that proto file using protoc (using proto compiler).
+We can create class of any language using the proto compiler
+Then we can use that class in our project
+
+---
+
+To download compiler go to below link
+https://github.com/protocolbuffers/protobuf/
+
+Click on latest release
+download protoc for our system. Eg: protoc-3.19.3-win64.zip
+
+Then extract/install in system
+
+If need add installed bin path to environment variable, so that we can use protoc in any directory
+
+Thats it
+
+---
+
+
+Sample proto file:
+
+Eg: user.proto
+
+message User {
+  required string name = 1;
+  optional int64 age = 2;
+}
+
+
+//give number for each param. Each number should be unique. Here i have given 1 for name and 2 for age.
+
+
+Once created, give below command to create class. //Here I wanted to create java class from proto
+
+protoc java_out=pathWhereTheJavaClassIsNeeded filenameWithPath
+
+Eg:
+protoc java_out=. user.proto       
+
+Above will create class file fron proto file using protoc
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+message User {
+  required string name = 1;
+  optional int64 age = 2;
+}
