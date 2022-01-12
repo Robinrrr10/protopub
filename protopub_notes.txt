@@ -40,7 +40,7 @@ message User {
 }
 
 
-//give number for each param. Each number should be unique. Here i have given 1 for name and 2 for age.
+//give number for each param. Each number should be unique and increasing order. should start from 1. Here i have given 1 for name and 2 for age.
 
 
 Once created, give below command to create class. //Here I wanted to create java class from proto
@@ -53,11 +53,28 @@ protoc java_out=. user.proto
 Above will create class file fron proto file using protoc
 
 
+-----------
 
 
+Way to write proto file:
+It should be like schema
+
+Eg:
+
+syntax = "proto3"         //use version in syntax. I have given latest version proto3
+
+message Employee {        //message is like class. 
+  int32 id = 1;          //here it has datatype variable name and sequence number
+  string name = 2;
+  float salary = 3;
+}
+
+message Employees {        //here list/array of employee is inside this 
+  repeated Employee employees = 1;     //For defining array/list use repeated. here i have given list of Employee in variable name employees
+}
 
 
+----
 
-
-
+It can be converted to any language
 
